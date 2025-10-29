@@ -1,0 +1,3 @@
+- How does the Next.js server implementation handle the connections to various other agents and sub agents?
+- How do I pause execution to allow a user to input information or ask for more stuff?
+- Can I add batching? 

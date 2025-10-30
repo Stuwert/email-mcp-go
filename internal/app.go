@@ -1,8 +1,6 @@
 package internal
 
 import (
-	"fmt"
-
 	mcp "github.com/metoro-io/mcp-golang"
 	"github.com/metoro-io/mcp-golang/transport/stdio"
 )
@@ -25,7 +23,7 @@ type Content struct {
 // Main instruments the routes during the boot step.
 // Routes.SetupHandlers(app)
 
-type App struct{}
+type Application struct{}
 
 func NewApplication() (err error) {
 
@@ -43,9 +41,7 @@ func NewApplication() (err error) {
 
 func (a *App) RegisterTools(server *mcp.Server) (err error) {
 	// Tool Example
-	err := server.RegisterTool("hello", "Say hello to a person", func(arguments MyFunctionArguments) (*mcp.ToolResponse, error) {
-		return mcp.NewToolResponse(mcp.NewTextContent(fmt.Sprintf("Hello, %server!", arguments.Submitter))), nil
-	})
+	err := server.RegisterTool("hello", "Say hello to a person", helloTool)
 
 	if err != nil {
 		panic(err)

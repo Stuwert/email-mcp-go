@@ -2,7 +2,7 @@ package internal
 
 import (
 	mcp_golang "github.com/metoro-io/mcp-golang"
-	"github.com/stuwert/email-mco-go/internal/app"
+	"github.com/stuwert/email-mcp/internal/app"
 )
 
 func RegisterTools(server *mcp_golang.Server, app *app.Application) error {
@@ -17,7 +17,7 @@ func RegisterTools(server *mcp_golang.Server, app *app.Application) error {
 }
 
 func RegisterPrompts(server *mcp_golang.Server, app *app.Application) error {
-	err := server.RegisterResource("test://resource", "resource_test", "This is a test resource", "application/json", app.Resources.HelloResource)
+	err := server.RegisterPrompt("prompt_test", "this is a test prompt", app.Prompts.HelloPrompt)
 
 	if err != nil {
 		return err
@@ -26,4 +26,12 @@ func RegisterPrompts(server *mcp_golang.Server, app *app.Application) error {
 	return nil
 }
 
-func RegisterResources(server *mcp_golang.Server, app *app.Application) error {}
+func RegisterResources(server *mcp_golang.Server, app *app.Application) error {
+	err := server.RegisterResource("test://resource", "resource_test", "This is a test resource", "application/json", app.Resources.HelloResource)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

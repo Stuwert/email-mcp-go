@@ -14,5 +14,5 @@ func NewToolHandlers() *Tools {
 }
 
 func (t *Tools) HelloTool(arguments types.MyFunctionArguments) (*mcp.ToolResponse, error) {
-	return mcp.NewToolResponse(mcp.NewTextContent(fmt.Sprintf("Hello, %server!", arguments.Submitter))), nil
+	return mcp.NewToolResponse(mcp.NewTextContent(fmt.Sprintf("Hello, %s!", arguments.Submitter))), nil
 }

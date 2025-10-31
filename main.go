@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	mcp "github.com/metoro-io/mcp-golang"
 	"github.com/metoro-io/mcp-golang/transport/stdio"
 	"github.com/stuwert/email-mcp/internal"
@@ -40,6 +42,14 @@ func main() {
 	internal.RegisterPrompts(server, app)
 	internal.RegisterResources(server, app)
 	internal.RegisterTools(server, app)
+
+	err = server.Serve()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Server is running")
 
 	<-done
 }

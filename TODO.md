@@ -11,13 +11,15 @@ A sequential checklist for building and testing a Go MCP server that expands ema
   - Add placeholder log statement to verify basic compilation works
   - Test: `go run main.go` should compile and exit successfully
 
-- [ ] **TODO 2: Initialize basic MCP server**
+- [x] **TODO 2: Initialize basic MCP server**
     - Create a level of abstraction so that the app.go file handles registering tools, resources and prompts
     - Main file starts the app, records any errors and handles deferring
 
-- [ ] **TODO 3: Hook this into a local chat instance and validate whether or not it's running
+- [x] **TODO 3: Hook this into a local chat instance and validate whether or not it's running
     - Figure out how to hook up server into local running instance (can I throw it into cursor?)
     - Check that resources and hello functionality works. 
+
+// Cursor said it works. Need to try adding this to Claude locally.
 
 - [ ] **TODO 4: Add server configuration**
   - Create configuration structure (using environment variables or config file)
